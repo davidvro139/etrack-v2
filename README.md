@@ -132,22 +132,32 @@ npm run test:e2e
 
 ## Demo Version
 
-A demo version (`etrack-demo`) is included in this repository. It uses **SQLite** instead of MySQL — no database server setup needed. Demo data is seeded automatically on the first run.
+A self-contained demo version of ETrack is available both as a live hosted app and as a standalone repository.
 
-**Demo credentials:**
+- **Live demo:** [https://etrack-demo.onrender.com](https://etrack-demo.onrender.com)
+- **Demo repository:** [https://github.com/davidvro139/etrack-demo](https://github.com/davidvro139/etrack-demo)
+
+> **Note on first load:** The demo is hosted on Render's free tier, which spins the server down after periods of inactivity. The first visit after a period of no use may take **30–60 seconds** to load while the server wakes up. Subsequent page loads are instant.
+
+**Login credentials:**
 | | |
 |---|---|
 | Email | `demo@etrack.app` |
 | Password | `demo1234` |
 
+**About the demo data:**
+All student records, interactions, outcomes, follow-ups, and course progress data are **automatically generated** when the server starts. No real student data is used. The Canvas LMS API is **bypassed in demo mode** — the On-Track report is built from the local database, the Reflection Grader shows realistic sample submissions, and Canvas Sync returns mock counts. All features are fully explorable without Canvas credentials.
+
 **Pre-loaded demo data:**
 - 20 students across 4 programs: IT Support, Cybersecurity, Web Development, Network Administration
-- Interactions, outcomes, follow-ups, and Canvas progress records
+- Mix of active, inactive, and graduated students with interactions and outcomes
+- Course progress records for the On-Track report
+- 3 sample reflections for the Reflection Grader
 - 4 email templates
-- All Canvas features work without real credentials — On-Track report, Reflection Grader, and Canvas Sync all return realistic mock data
 
 **Run the demo locally:**
 ```bash
+git clone https://github.com/davidvro139/etrack-demo
 cd etrack-demo
 npm run install:all    # first time only
 npm run dev
